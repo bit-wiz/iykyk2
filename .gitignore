@@ -1,0 +1,7 @@
+*.c
+*.ipynb
+*.csv
+*.pdf
+.ip**/
+*.sh
+*.out

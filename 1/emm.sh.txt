@@ -1,0 +1,25 @@
+#!/bin/bash
+
+BOOK="address-book.txt"
+
+while true; do
+   echo "a) Create address book"
+   echo "b) View address book"
+   echo "c) Insert a record"
+   echo "d) Delete a record"
+   echo "e) Modify a record"
+   echo "f) Exit"
+   echo -n "Enter your choice: "
+   read choice
+
+   case $choice in
+       a) echo -n "Enter name: "; read name; echo -n "Enter phone number: "; read phone; echo "$name $phone" >> $BOOK;;
+       b) cat $BOOK;;
+       c) echo -n "Enter name: "; read name; echo -n "Enter phone number: "; read phone; echo "$name $phone" >> $BOOK;;
+       d) echo -n "Enter name to delete: "; read name; sed -i "/$name/d" $BOOK;;
+       e) echo -n "Enter name to modify: "; read name; echo -n "Enter new phone number: "; read phone; sed -i "/$name/c$name $phone" $BOOK;;
+       f) break;;
+       *) echo "Invalid choice";;
+   esac
+done
+
