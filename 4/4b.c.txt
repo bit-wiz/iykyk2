@@ -19,7 +19,7 @@ void *reader(void *param) {
            printf("Data read by reader %d is %d\n", id, data);
        	   c++;
        	   printf("%d", c);
-       
+
        }
        pthread_mutex_unlock(&mutex);
        sleep(1);
@@ -74,4 +74,3 @@ int main() {
 
    return 0;
 }
-

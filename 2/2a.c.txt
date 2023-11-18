@@ -4,6 +4,16 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
+void swap(int a, int b) {
+    int temp;
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    printf("Inside swap function: a = %d, b = %d\n", a, b);
+}
+
 void bubbleSort(int arr[], int n) {
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - i - 1; j++) {
